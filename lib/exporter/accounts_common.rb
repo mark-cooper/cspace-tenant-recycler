@@ -1,7 +1,7 @@
 module Exporter
 
   class AccountsCommon < Table
-    def config
+    def apply_config
       {
         table: :accounts_common,
         hjid: false,

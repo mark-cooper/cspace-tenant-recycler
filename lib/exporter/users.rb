@@ -1,7 +1,7 @@
 module Exporter
 
   class Users < Table
-    def config
+    def apply_config
       {
         table: :users,
         hjid: false,

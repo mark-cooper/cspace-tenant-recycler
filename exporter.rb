@@ -55,7 +55,7 @@ EXPORTERS = {
 EXPORTERS.each do |name, exporter|
   next if name == :default
   members = EXPORTERS[exporter[:members]][:class].members
-  exporter[:class].add_filters(members)
+  exporter[:class].add_filter(members)
   exporter[:class].query
   exporter[:class].export(output_dir: OUTPUT_DIR)
 end

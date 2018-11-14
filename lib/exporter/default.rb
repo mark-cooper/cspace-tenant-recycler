@@ -7,7 +7,7 @@ module Exporter
       @domain = domain
     end
 
-    def config
+    def apply_config
       {}
     end
 

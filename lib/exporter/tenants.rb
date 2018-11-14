@@ -1,7 +1,7 @@
 module Exporter
 
   class Tenants < Table
-    def config
+    def apply_config
       {
         table: :tenants,
         hjid: false,

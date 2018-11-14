@@ -1,9 +1,9 @@
 module Exporter
 
   module Queryable
-    def add_filters(args = [])
-      @filter = args
-      @config = config
+    def add_filter(filter = [])
+      @filter = filter
+      @config = apply_config
     end
 
     def query
@@ -32,12 +32,12 @@ module Exporter
     attr_reader :config, :data, :filter
 
     def initialize(filter: [])
-      @config = config
+      @config = apply_config
       @data   = []
       @filter = filter
     end
 
-    def config
+    def apply_config
       {}
     end
 
