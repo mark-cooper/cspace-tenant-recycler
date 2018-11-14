@@ -2,7 +2,7 @@ module Exporter
 
   class PermissionsActions < Table
     attr_reader :id
-    def initialize(id:)
+    def initialize(id: nil)
       @id     = id
       @config = apply_config
       @data   = []
