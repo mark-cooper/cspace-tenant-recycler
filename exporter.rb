@@ -7,15 +7,15 @@ LOGGER     = Logger.new('log/exporter.log')
 OUTPUT_DIR = FileUtils.mkdir_p('exporter')
 
 config = YAML.load_file('config.yml')
-config['db']['adapter'] = :postgres
-config['db']['logger']  = LOGGER
+config['exporter']['db']['adapter'] = :postgres
+config['exporter']['db']['logger']  = LOGGER
 
-TENANT_ID     = config['tenant']['id']
-TENANT_DOMAIN = config['tenant']['domain']
+TENANT_ID     = config['exporter']['tenant']['id']
+TENANT_DOMAIN = config['exporter']['tenant']['domain']
 
 puts "Exporting data for tenant #{TENANT_ID}:#{TENANT_DOMAIN}"
 
-DB = Sequel.connect(config['db'])
+DB = Sequel.connect(config['exporter']['db'])
 
 EXPORTERS = {
   default: {

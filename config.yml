@@ -1,11 +1,20 @@
 ---
-db:
-  database: cspace_collectionspace
-  host: 127.0.0.1
-  port: 5432
-  user: csadmin
-  password: csadmin
-  max_connections: 10
-tenant:
-  id: 1
-  domain: core.collectionspace.org
+exporter:
+  db:
+    database: cspace_gsd
+    host: 127.0.0.1
+    port: 5432
+    user: csadmin
+    password: csadmin
+    max_connections: 10
+  tenant:
+    id: 100000
+    domain: cspace.gsd.harvard.edu
+importer:
+  db:
+    database: cspace_collectionspace
+    host: 127.0.0.1
+    port: 5432
+    user: csadmin
+    password: csadmin
+    max_connections: 10
