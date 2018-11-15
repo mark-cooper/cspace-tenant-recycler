@@ -29,20 +29,9 @@ was created called `cspace_gsd.sql`:
 
 ```bash
 sed -i.bak 's/cspace_gsd/cspace_collectionspace/' cspace_gsd.sql
-pgcli -h localhost -U csadmin cspace_collectionspace
-```
-
-Create the empty database to restore into:
-
-```sql
-DROP DATABASE IF EXISTS cspace_gsd;
-CREATE DATABASE cspace_gsd OWNER cspace_collectionspace;
-```
-
-Perform the restore:
-
-```bash
-psql -U csadmin -d cspace_gsd -f cspace_gsd.sql
+dropdb -U csadmin -h localhost cspace_gsd || true
+createdb -U csadmin -h localhost -O cspace_collectionspace -T template1 cspace_gsd
+psql -U csadmin -h localhost -d cspace_gsd -f cspace_gsd.sql
 ```
 
 Run an export:
