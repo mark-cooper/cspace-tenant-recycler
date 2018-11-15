@@ -10,15 +10,15 @@ module Exporter
           :id,
           :created_at,
           :name,
-          :config_md5hash,
-          :authorities_initialized,
+          # :config_md5hash,
+          # :authorities_initialized,
           :disabled,
         ]
       }
     end
 
-    def members
-      data.map { |d| d[0] }
+    def members(attribute: :id)
+      get_members(attribute: attribute)
     end
   end
 

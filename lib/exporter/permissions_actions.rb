@@ -22,8 +22,8 @@ module Exporter
       }
     end
 
-    def members
-      data.map { |d| d[1] }
+    def members(attribute: :objectidentity)
+      get_members(attribute: attribute)
     end
   end
 

@@ -13,14 +13,14 @@ module Exporter
           :displayname,
           :rolename,
           :tenant_id,
-          :metadata_protection,
+          # :metadata_protection,
           :perms_protection,
         ],
       }
     end
 
-    def members
-      data.map { |d| d[4] }
+    def members(attribute: :rolename)
+      get_members(attribute: attribute)
     end
   end
 

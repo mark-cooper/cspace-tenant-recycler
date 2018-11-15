@@ -12,16 +12,16 @@ module Exporter
           :created_at,
           :description,
           :effect,
-          :metadata_protection,
-          :actions_protection,
+          # :metadata_protection,
+          # :actions_protection,
           :resource_name,
           :tenant_id,
         ],
       }
     end
 
-    def members
-      data.map { |d| d[0] }
+    def members(attribute: :csid)
+      get_members(attribute: attribute)
     end
   end
 

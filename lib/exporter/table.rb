@@ -6,6 +6,10 @@ module Exporter
       @config = apply_config
     end
 
+    def get_members(attribute:)
+      data.map { |d| d[config[:attributes].index(attribute)] }
+    end
+
     def query
       @data = DB[config[:table]].where(config[:query]).select_map(config[:attributes])
       self

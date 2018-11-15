@@ -13,8 +13,8 @@ module Exporter
       }
     end
 
-    def members
-      data.map { |d| d[-1] }
+    def members(attribute: :tenants_accounts_common_csid)
+      get_members(attribute: attribute)
     end
   end
 
